@@ -7,4 +7,22 @@
  * depending on specificity.
  *
  * Consider organizing styles into separate files for maintainability.
+ *= require_tree .
+ *= require_self
+ *= require active_admin
  */
+ */
+.card {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+.image img {
+  object-fit: cover;
+  width: 64px;
+  height: 64px;
+}

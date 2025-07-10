@@ -1,0 +1,37 @@
+<section class="hero is-warning">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">Customers Missing Email</h1>
+      <h2 class="subtitle">Customers without email addresses</h2>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="level">
+      <div class="level-left">
+        <div class="level-item">
+          <div class="buttons">
+            <%= link_to "All Customers", root_path, class: "button is-primary" %>
+            <%= link_to "Alphabetized View", customers_alphabetized_path, class: "button is-info" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <% if @customers.any? %>
+      <div class="columns is-multiline">
+        <% @customers.each do |customer| %>
+          <div class="column is-one-third">
+            <%= render 'customer', customer: customer %>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="notification is-success">
+        <p>All customers have email addresses!</p>
+      </div>
+    <% end %>
+  </div>
+</section>
